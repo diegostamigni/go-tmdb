@@ -1,4 +1,4 @@
-module diegostamigni/go-tmdb
+module github.com/diegostamigni/go-tmdb
 
 go 1.21.4
 
