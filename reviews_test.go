@@ -14,6 +14,6 @@ func (s *TmdbSuite) TestGetReviewInfo(c *C) {
 	c.Assert(result.Iso639_1, Equals, "en")
 	c.Assert(result.MediaID, Equals, 49026)
 	c.Assert(result.MediaTitle, Equals, "The Dark Knight Rises")
-	c.Assert(result.MediaType, Equals, "Movie")
-	c.Assert(result.URL, Equals, "http://j.mp/P18dg1")
+	c.Assert(result.MediaType, Equals, "movie")
+	c.Assert(result.URL, Equals, "https://www.themoviedb.org/review/5013bc76760ee372cb00253e")
 }

@@ -29,9 +29,9 @@ func (s *TmdbSuite) TestDiscoverMovie(c *C) {
 	s.baseTest(&tomHanksTimAllenMovies, err, c)
 	c.Assert(tomHanksTimAllenMovies.Page, Equals, 1)
 	c.Assert(tomHanksTimAllenMovies.TotalPages, Equals, 1)
-	c.Assert(tomHanksTimAllenMovies.TotalResults, Equals, 8)
+	c.Assert(tomHanksTimAllenMovies.TotalResults, Equals, 17)
 	c.Assert(tomHanksTimAllenMovies.Results, NotNil)
-	c.Assert(tomHanksTimAllenMovies.Results, HasLen, 8)
+	c.Assert(tomHanksTimAllenMovies.Results, HasLen, 17)
 
 	var goodMcConaugheyOptions = make(map[string]string)
 	goodMcConaugheyOptions["with_cast"] = "10297"
@@ -40,9 +40,9 @@ func (s *TmdbSuite) TestDiscoverMovie(c *C) {
 	s.baseTest(&goodMcConaugheyMovies, err, c)
 	c.Assert(goodMcConaugheyMovies.Page, Equals, 1)
 	c.Assert(goodMcConaugheyMovies.TotalPages, Equals, 1)
-	c.Assert(goodMcConaugheyMovies.TotalResults, Equals, 3)
+	c.Assert(goodMcConaugheyMovies.TotalResults, Equals, 17)
 	c.Assert(goodMcConaugheyMovies.Results, NotNil)
-	c.Assert(goodMcConaugheyMovies.Results, HasLen, 3)
+	c.Assert(goodMcConaugheyMovies.Results, HasLen, 17)
 
 	var horrible2010Options = make(map[string]string)
 	horrible2010Options["vote_average.lte"] = "1.0"
@@ -51,8 +51,8 @@ func (s *TmdbSuite) TestDiscoverMovie(c *C) {
 	horrible2010Movies, err := s.tmdb.DiscoverMovie(horrible2010Options)
 	s.baseTest(&horrible2010Movies, err, c)
 	c.Assert(horrible2010Movies.Page, Equals, 1)
-	c.Assert(horrible2010Movies.TotalPages, Equals, 2)
-	c.Assert(horrible2010Movies.TotalResults, Equals, 24)
+	c.Assert(horrible2010Movies.TotalPages, Equals, 10)
+	c.Assert(horrible2010Movies.TotalResults, Equals, 193)
 	c.Assert(horrible2010Movies.Results, NotNil)
 	c.Assert(horrible2010Movies.Results, HasLen, 20)
 
@@ -64,8 +64,8 @@ func (s *TmdbSuite) TestDiscoverMovie(c *C) {
 	horrible2010Page2Movies, err := s.tmdb.DiscoverMovie(horrible2010Page2Options)
 	s.baseTest(&horrible2010Page2Movies, err, c)
 	c.Assert(horrible2010Page2Movies.Page, Equals, 2)
-	c.Assert(horrible2010Page2Movies.TotalPages, Equals, 2)
-	c.Assert(horrible2010Page2Movies.TotalResults, Equals, 24)
+	c.Assert(horrible2010Page2Movies.TotalPages, Equals, 10)
+	c.Assert(horrible2010Page2Movies.TotalResults, Equals, 193)
 	c.Assert(horrible2010Page2Movies.Results, NotNil)
 	c.Assert(horrible2010Page2Movies.Results, HasLen, 4)
 }

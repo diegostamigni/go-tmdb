@@ -45,7 +45,7 @@ func (s *TmdbSuite) TestGetMovieAlternativeTitles(c *C) {
 	s.baseTest(&result, err, c)
 	c.Assert(result.ID, Equals, fightClubID)
 	c.Assert(result.Titles, Not(HasLen), 0)
-	c.Assert(result.Titles[0].Iso3166_1, Equals, "PL")
+	c.Assert(result.Titles[0].Iso3166_1, Equals, "IL")
 }
 
 func (s *TmdbSuite) TestGetMovieChanges(c *C) {
@@ -69,7 +69,7 @@ func (s *TmdbSuite) TestGetMovieCredits(c *C) {
 	c.Assert(result.ID, Equals, fightClubID)
 	c.Assert(result.Cast, Not(HasLen), 0)
 	c.Assert(result.Cast[0].CastID, Equals, 4)
-	c.Assert(result.Cast[0].Character, Equals, "The Narrator")
+	c.Assert(result.Cast[0].Character, Equals, "Narrator")
 	c.Assert(result.Cast[0].Name, Equals, "Edward Norton")
 }
 
@@ -99,7 +99,7 @@ func (s *TmdbSuite) TestGetMovieKeywords(c *C) {
 	s.baseTest(&result, err, c)
 	c.Assert(result.ID, Equals, fightClubID)
 	c.Assert(result.Keywords, Not(HasLen), 0)
-	c.Assert(result.Keywords[0].ID, Equals, 825)
+	c.Assert(result.Keywords[0].ID, Equals, 851)
 	c.Assert(result.Keywords[0].Name, Equals, "support group")
 }
 
@@ -164,7 +164,7 @@ func (s *TmdbSuite) TestGetMovieReleases(c *C) {
 	c.Assert(result.Countries, Not(HasLen), 0)
 	c.Assert(result.Countries[0].Iso3166_1, Equals, "US")
 	c.Assert(result.Countries[0].Certification, Equals, "R")
-	c.Assert(result.Countries[0].ReleaseDate, Equals, "1999-10-14")
+	c.Assert(result.Countries[0].ReleaseDate, Equals, "1999-10-15")
 }
 
 func (s *TmdbSuite) TestGetMovieReviews(c *C) {
@@ -187,7 +187,7 @@ func (s *TmdbSuite) TestGetMovieSimilar(c *C) {
 	s.baseTest(&result, err, c)
 	c.Assert(result.Page, Equals, 1)
 	c.Assert(result.Results, Not(HasLen), 0)
-	c.Assert(result.Results[0].ID, Equals, 807)
+	c.Assert(result.Results[0].ID, Equals, 11798)
 	c.Assert(result.Results[0].Title, Equals, "Se7en")
 
 	var engOptions = make(map[string]string)

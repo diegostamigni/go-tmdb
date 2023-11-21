@@ -111,14 +111,33 @@ type MoviePagedResults struct {
 	Rating            *MovieRating            `json:",omitempty"`
 }
 
+// CompanyMovie
+type CompanyMoviePagedResults struct {
+	ID                string
+	Page              int
+	Results           []MovieShort
+	TotalPages        int                     `json:"total_pages"`
+	TotalResults      int                     `json:"total_results"`
+	AlternativeTitles *MovieAlternativeTitles `json:"alternative_titles,omitempty"`
+	Credits           *MovieCredits           `json:",omitempty"`
+	Images            *MovieImages            `json:",omitempty"`
+	Keywords          *MovieKeywords          `json:",omitempty"`
+	Releases          *MovieReleases          `json:",omitempty"`
+	Videos            *MovieVideos            `json:",omitempty"`
+	Translations      *MovieTranslations      `json:",omitempty"`
+	Similar           *MoviePagedResults      `json:",omitempty"`
+	Reviews           *MovieReviews           `json:",omitempty"`
+	Lists             *MovieLists             `json:",omitempty"`
+	Changes           *MovieChanges           `json:",omitempty"`
+	Rating            *MovieRating            `json:",omitempty"`
+}
+
 // MovieAccountState struct
 type MovieAccountState struct {
 	ID        int
 	Favorite  bool
 	Watchlist bool
-	Rated     struct {
-		Value float32
-	}
+	Rated     bool
 }
 
 // MovieAlternativeTitles struct
@@ -214,7 +233,7 @@ type MovieImages struct {
 	ID                int
 	Backdrops         []MovieImage
 	Posters           []MovieImage
-	Logos		  []MovieImage
+	Logos             []MovieImage
 	AlternativeTitles *MovieAlternativeTitles `json:"alternative_titles,omitempty"`
 	Credits           *MovieCredits           `json:",omitempty"`
 	Keywords          *MovieKeywords          `json:",omitempty"`
@@ -255,7 +274,7 @@ type MovieLists struct {
 	Results []struct {
 		Description   string
 		FavoriteCount int `json:"favorite_count"`
-		ID            string
+		ID            int
 		ItemCount     int    `json:"item_count"`
 		Iso639_1      string `json:"iso_639_1"`
 		Name          string

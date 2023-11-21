@@ -34,14 +34,14 @@ func (tmdb *TMDb) GetCompanyInfo(id int, options map[string]string) (*Company, e
 
 // GetCompanyMovies gets the list of movies associated with a particular company
 // No current documentation exists for this endpoint
-func (tmdb *TMDb) GetCompanyMovies(id int, options map[string]string) (*MoviePagedResults, error) {
+func (tmdb *TMDb) GetCompanyMovies(id int, options map[string]string) (*CompanyMoviePagedResults, error) {
 	var availableOptions = map[string]struct{}{
 		"page":               {},
 		"language":           {},
 		"append_to_response": {}}
-	var movies MoviePagedResults
+	var movies CompanyMoviePagedResults
 	optionsString := getOptionsString(options, availableOptions)
 	uri := fmt.Sprintf("%s/company/%v/movies?api_key=%s%s", baseURL, id, tmdb.apiKey, optionsString)
 	result, err := getTmdb(uri, &movies)
-	return result.(*MoviePagedResults), err
+	return result.(*CompanyMoviePagedResults), err
 }

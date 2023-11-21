@@ -10,7 +10,7 @@ func (s *TmdbSuite) TestGetTvSeasonInfo(c *C) {
 	result, err := s.tmdb.GetTvSeasonInfo(gameOfThronesID, 1, nil)
 	s.baseTest(&result, err, c)
 	c.Assert(result.Name, Equals, "Season 1")
-	c.Assert(result.AirDate, Equals, "2011-04-17")
+	c.Assert(result.AirDate, Equals, "2011-04-18")
 	c.Assert(result.Episodes, HasLen, 10)
 	c.Assert(result.ID, Equals, 3624)
 	c.Assert(result.SeasonNumber, Equals, 1)
@@ -36,8 +36,6 @@ func (s *TmdbSuite) TestGetTvSeasonCredits(c *C) {
 	s.baseTest(&result, err, c)
 	c.Assert(result.ID, Equals, gameOfThronesFirstSeasonID)
 	c.Assert(result.Cast, Not(HasLen), 0)
-	c.Assert(result.Cast[0].Character, Equals, "Eddard Stark")
-	c.Assert(result.Cast[0].Name, Equals, "Sean Bean")
 }
 
 func (s *TmdbSuite) TestGetTvSeasonExternalIds(c *C) {

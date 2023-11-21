@@ -13,10 +13,10 @@ func (s *TmdbSuite) TestGetTvInfo(c *C) {
 	c.Assert(result.Name, Equals, "Game of Thrones")
 	c.Assert(result.ID, Equals, gameOfThronesID)
 	c.Assert(result.FirstAirDate, Equals, "2011-04-17")
-	c.Assert(result.Homepage, Equals, "http://www.hbo.com/game-of-thrones/index.html")
+	c.Assert(result.Homepage, Equals, "http://www.hbo.com/game-of-thrones")
 	c.Assert(result.Networks[0].ID, Equals, hboID)
 	c.Assert(result.Networks[0].Name, Equals, "HBO")
-	c.Assert(result.Status, Equals, "Returning Series")
+	c.Assert(result.Status, Equals, "Ended")
 	c.Assert(result.Type, Equals, "Scripted")
 	c.Assert(len(result.Seasons), Equals, result.NumberOfSeasons+1)
 
@@ -82,7 +82,7 @@ func (s *TmdbSuite) TestGetTvCredits(c *C) {
 	s.baseTest(&result, err, c)
 	c.Assert(result.ID, Equals, gameOfThronesID)
 	c.Assert(result.Cast, Not(HasLen), 0)
-	c.Assert(result.Cast[0].Character, Equals, "Tyrion Lannister")
+	c.Assert(result.Cast[0].Character, Equals, "Tyrion 'The Halfman' Lannister")
 	c.Assert(result.Cast[0].Name, Equals, "Peter Dinklage")
 }
 
@@ -119,8 +119,8 @@ func (s *TmdbSuite) TestGetTvKeywords(c *C) {
 	s.baseTest(&result, err, c)
 	c.Assert(result.ID, Equals, gameOfThronesID)
 	c.Assert(result.Results, Not(HasLen), 0)
-	c.Assert(result.Results[0].ID, Equals, 6091)
-	c.Assert(result.Results[0].Name, Equals, "war")
+	c.Assert(result.Results[0].ID, Equals, 818)
+	c.Assert(result.Results[0].Name, Equals, "based on the novel or book")
 }
 
 func (s *TmdbSuite) TestGetTvLatest(c *C) {

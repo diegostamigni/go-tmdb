@@ -32,7 +32,7 @@ type Credit struct {
 	ID        string
 	Person    struct {
 		Name string
-		ID   string
+		ID   int
 	}
 }
 

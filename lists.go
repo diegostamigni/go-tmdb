@@ -8,7 +8,7 @@ import (
 type ListInfo struct {
 	CreatedBy     string `json:"created_by"`
 	FavoriteCount int    `json:"favorite_count"`
-	ID            string
+	ID            int
 	Description   string
 	Items         []MovieShort
 	ItemCount     int    `json:"item_count"`

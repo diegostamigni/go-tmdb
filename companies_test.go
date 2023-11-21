@@ -1,6 +1,8 @@
 package tmdb
 
 import (
+	"strconv"
+
 	. "gopkg.in/check.v1"
 )
 
@@ -25,7 +27,7 @@ func (s *TmdbSuite) TestGetCompanyInfo(c *C) {
 func (s *TmdbSuite) TestGetCompanyMovies(c *C) {
 	movies, err := s.tmdb.GetCompanyMovies(columbiaID, nil)
 	s.baseTest(&movies, err, c)
-	c.Assert(movies.ID, Equals, columbiaID)
+	c.Assert(movies.ID, Equals, strconv.Itoa(columbiaID))
 	c.Assert(movies.Page, Equals, 1)
 	c.Assert(movies.TotalPages > 20, Equals, true)
 	c.Assert(movies.TotalResults > 400, Equals, true)
@@ -36,7 +38,7 @@ func (s *TmdbSuite) TestGetCompanyMovies(c *C) {
 	options["page"] = "2"
 	moviesPage2, err := s.tmdb.GetCompanyMovies(columbiaID, options)
 	s.baseTest(&moviesPage2, err, c)
-	c.Assert(moviesPage2.ID, Equals, columbiaID)
+	c.Assert(moviesPage2.ID, Equals, strconv.Itoa(columbiaID))
 	c.Assert(moviesPage2.Page, Equals, 2)
 	c.Assert(moviesPage2.TotalPages > 20, Equals, true)
 	c.Assert(moviesPage2.TotalResults > 400, Equals, true)

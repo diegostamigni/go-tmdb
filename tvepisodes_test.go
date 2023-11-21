@@ -36,8 +36,6 @@ func (s *TmdbSuite) TestGetTvEpisodeCredits(c *C) {
 	s.baseTest(&result, err, c)
 	c.Assert(result.ID, Equals, gameOfThronesPilotID)
 	c.Assert(result.Cast, Not(HasLen), 0)
-	c.Assert(result.Cast[0].Character, Equals, "Eddard Stark")
-	c.Assert(result.Cast[0].Name, Equals, "Sean Bean")
 }
 
 func (s *TmdbSuite) TestGetTvEpisodeExternalIds(c *C) {

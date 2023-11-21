@@ -26,11 +26,11 @@ type TV struct {
 		ID             int
 		Name           string
 		Overview       string
-		ProductionCode string `json:"production_code"`
-		SeasonNumber   int    `json:"season_number"`
-		StillPath      string `json:"still_path"`
-		VoteAverage    int    `json:"vote_average"`
-		VoteCount      int    `json:"vote_count"`
+		ProductionCode string  `json:"production_code"`
+		SeasonNumber   int     `json:"season_number"`
+		StillPath      string  `json:"still_path"`
+		VoteAverage    float32 `json:"vote_average"`
+		VoteCount      int     `json:"vote_count"`
 	} `json:"next_episode_to_air"`
 	Homepage     string
 	ID           int
@@ -122,9 +122,7 @@ type TvAccountState struct {
 	ID        int
 	Favorite  bool
 	Watchlist bool
-	Rated     struct {
-		Value float32
-	}
+	Rated     bool
 }
 
 // TvAlternativeTitles struct
@@ -276,7 +274,7 @@ type TvTranslations struct {
 type TvVideos struct {
 	ID      int
 	Results []struct {
-		ID       int
+		ID       string
 		Iso639_1 string `json:"iso_639_1"`
 		Key      string
 		Name     string

@@ -10,7 +10,7 @@ func (s *TmdbSuite) TestSearchCollection(c *C) {
 	c.Assert(result.Page, Equals, 1)
 	c.Assert(result.Results, Not(HasLen), 0)
 	c.Assert(result.TotalResults, Not(Equals), 0)
-	c.Assert(result.Results[0].ID, Equals, 86311)
+	c.Assert(result.Results[0].ID, Equals, 482721)
 	c.Assert(result.Results[0].Name, Equals, "The Avengers Collection")
 }
 
@@ -20,7 +20,7 @@ func (s *TmdbSuite) TestSearchCompany(c *C) {
 	c.Assert(result.Page, Equals, 1)
 	c.Assert(result.Results, Not(HasLen), 0)
 	c.Assert(result.TotalResults, Not(Equals), 0)
-	c.Assert(result.Results[0].Name, Equals, "Lucas Entertainment")
+	c.Assert(result.Results[0].Name, Equals, "Lucas Kazan Productions")
 }
 
 func (s *TmdbSuite) TestSearchKeyword(c *C) {
@@ -29,7 +29,7 @@ func (s *TmdbSuite) TestSearchKeyword(c *C) {
 	c.Assert(result.Page, Equals, 1)
 	c.Assert(result.Results, Not(HasLen), 0)
 	c.Assert(result.TotalResults, Not(Equals), 0)
-	c.Assert(result.Results[0].ID, Equals, 207600)
+	c.Assert(result.Results[0].ID, Equals, 322496)
 	c.Assert(result.Results[0].Name, Equals, "action")
 }
 
@@ -108,7 +108,7 @@ func (s *TmdbSuite) TestSearchTv(c *C) {
 	c.Assert(result.Page, Equals, 1)
 	c.Assert(result.Results, Not(HasLen), 0)
 	c.Assert(result.TotalPages, Equals, 1)
-	c.Assert(result.TotalResults, Equals, 1)
+	c.Assert(result.TotalResults, Equals, 2)
 	c.Assert(result.Results[0].ID, Equals, 1396)
 	c.Assert(result.Results[0].Name, Equals, "Breaking Bad")
 

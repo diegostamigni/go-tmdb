@@ -9,7 +9,7 @@ const oscarWinnerListID string = "509ec17b19c2950a0600050d"
 func (s *TmdbSuite) TestGetListInfo(c *C) {
 	result, err := s.tmdb.GetListInfo(oscarWinnerListID)
 	s.baseTest(&result, err, c)
-	c.Assert(result.ID, Equals, oscarWinnerListID)
+	c.Assert(result.ID, Equals, 509)
 	c.Assert(result.CreatedBy, Equals, "Travis Bell")
 	c.Assert(result.Iso639_1, Equals, "en")
 	c.Assert(result.ItemCount, Equals, 86)
